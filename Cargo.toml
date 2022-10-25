@@ -1,0 +1,11 @@
+[package]
+name = "aoc2021"
+version = "0.1.0"
+edition = "2021"
+default-run = "aoc2021"
+
+[lib]
+name = "lib"
+path = "src/lib.rs"
+
+# [dependencies]
