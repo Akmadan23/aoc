@@ -8,7 +8,7 @@ use std::{
 macro_rules! flush {
     () => {
         use std::io::Write;
-        std::io::stdout().flush().expect("Unable to flush `stdout`")
+        std::io::stdout().flush().expect("Unable to flush `stdout`");
     }
 }
 
@@ -20,10 +20,13 @@ macro_rules! read {
 }
 
 // inspired by teej_dv's implementation
-pub fn read_from_file<T>(path: &str, sep: &str) -> Result<Vec<T>, Box<dyn Error>>
-where T: FromStr {
+pub fn read_from_file<T: FromStr>(path: &str, sep: &str) -> Result<Vec<T>, Box<dyn Error>> {
     Ok(fs::read_to_string(path)?
         .split(sep)
-        .filter_map(|line| if !line.is_empty() { line.parse().ok() } else { None })
+        .filter_map(|line| if !line.is_empty() {
+            line.trim().parse().ok()
+        } else {
+            None
+        })
         .collect())
 }
