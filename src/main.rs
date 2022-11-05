@@ -22,6 +22,7 @@ fn main() {
             "4" => day4::main(),
             "5" => day5::main(),
             "6" => day6::main(),
+            "7" => day7::main(),
             "0" => break,
             _ => continue
         }
