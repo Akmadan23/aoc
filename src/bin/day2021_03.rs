@@ -7,7 +7,7 @@ struct Data {
 
 pub fn main() {
     const SIZE: usize = 12;
-    let original_lines: Vec<String> = lib::read_from_file("data/3.txt", "\n").unwrap();
+    let original_lines: Vec<String> = aoc::read_from_file("data/2021/03.txt", "\n").unwrap();
 
     let [
         mut gamma,
@@ -61,7 +61,7 @@ pub fn main() {
                 break;
             }
 
-            for l in &lines {
+            for l in lines.iter() {
                 cont += l[i];
             }
 

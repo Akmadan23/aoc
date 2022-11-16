@@ -1,5 +1,5 @@
 pub fn main() {
-    let v: Vec<i32> = lib::read_from_file("data/1.txt", "\n").unwrap();
+    let v: Vec<i32> = aoc::read_from_file("data/2021/01.txt", "\n").unwrap();
     let [mut c1, mut c2] = [0; 2];
 
     for i in 1..v.len() {

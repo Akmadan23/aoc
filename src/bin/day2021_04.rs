@@ -42,7 +42,7 @@ impl Board {
 }
 
 pub fn main() {
-    let lines: Vec<String> = lib::read_from_file("data/4.txt", "\n").unwrap();
+    let lines: Vec<String> = aoc::read_from_file("data/2021/04.txt", "\n").unwrap();
 
     let numbers: Vec<u8> = lines[0].split(",")
         .map(|i| i.parse().unwrap())

@@ -7,7 +7,7 @@ pub fn main() {
     let mut counts = VecDeque::from(vec![0; 9]);
     let mut day = 0;
 
-    lib::read_from_file("data/6.txt", ",")
+    aoc::read_from_file("data/2021/06.txt", ",")
         .unwrap()
         .into_iter()
         .for_each(|i| counts[i] += 1);
@@ -31,7 +31,7 @@ pub fn main() {
 // but for 256 days the complexity goes crazy and it takes really long.
 // I'll keep it here because anyways this multi-threaded version is pretty cool
 fn _simulation() {
-    let mut v: Vec<u8> = lib::read_from_file("data/6.txt", ",").unwrap();
+    let mut v: Vec<u8> = aoc::read_from_file("data/2021/06.txt", ",").unwrap();
 
     for day in 1..=256 {
         let mut thr = vec![];
