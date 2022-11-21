@@ -58,7 +58,7 @@ pub fn main() {
             let len = lines.len() as u16;
 
             if len == 1 {
-                break;
+                break
             }
 
             for l in lines.iter() {
@@ -85,11 +85,6 @@ pub fn main() {
     oxygen.int = i32::from_str_radix(&oxygen.str, 2).unwrap();
     co2.int = i32::from_str_radix(&co2.str, 2).unwrap();
 
-    println!("Gamma: {} -> {}", gamma.str, gamma.int);              // Gamma: 110010111011 -> 3259
-    println!("Epsilon: {} -> {}", epsilon.str, epsilon.int);        // Epsilon: 001101000100 -> 836
-    println!("Result 1: {}", gamma.int * epsilon.int);              // Result 1: 2724524
-    println!("------------------------------------------"); 
-    println!("Oxygen generator: {} -> {}", oxygen.str, oxygen.int); // Oxygen generator: 111110110111 -> 4023
-    println!("CO2 scrubber: {} -> {}", co2.str, co2.int);           // CO2 scrubber: 001010110010 -> 690
-    println!("Result 2: {}", oxygen.int * co2.int);                 // Result 2: 2775870
+    println!("Result 1: {}", gamma.int * epsilon.int);  // Result 1: 2724524
+    println!("Result 2: {}", oxygen.int * co2.int);     // Result 2: 2775870
 }

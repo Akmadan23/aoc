@@ -1,7 +1,7 @@
 use std::{
     cmp,
     str::FromStr,
-    num::ParseIntError
+    convert::Infallible
 };
 
 #[derive(Debug)]
@@ -13,31 +13,30 @@ struct Line {
 }
 
 impl FromStr for Line {
-    type Err = ParseIntError;
+    type Err = Infallible;
 
     // input: "x1,y1 -> x2,y2"
     // output: Line { x1, y1, x2, y2 }
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let coord: Vec<String> = s
+        let coord: Vec<u16> = s
             .replace(" -> ", ",")
             .split(",")
-            .map(|i| i.to_string())
+            .filter_map(|i| i.parse().ok())
             .collect();
 
-        // println!("{coord:?}");
         Ok(Self {
-            x1: coord[0].parse()?,
-            y1: coord[1].parse()?,
-            x2: coord[2].parse()?,
-            y2: coord[3].parse()?,
+            x1: coord[0],
+            y1: coord[1],
+            x2: coord[2],
+            y2: coord[3],
         })
     }
 }
 
 pub fn main() {
-    let lines: Vec<Line> = aoc::read_from_file("data/2021/5.txt", "\n").unwrap();
+    let lines: Vec<Line> = aoc::read_from_file("data/2021/05.txt", "\n").unwrap();
     let mut diagram = [[[0 as u8; 2]; 990]; 990];
-    let [mut count1, mut count2] = [0 as u16; 2];
+    let [mut result1, mut result2] = [0 as u16; 2];
 
     let [
         mut index_x,
@@ -88,15 +87,15 @@ pub fn main() {
     for i in 0..diagram.len() {
         for j in 0..diagram[i].len() {
             if diagram[i][j][0] > 1 {
-                count1 += 1;
+                result1 += 1;
             }
 
             if diagram[i][j][0] + diagram[i][j][1] > 1 {
-                count2 += 1;
+                result2 += 1;
             }
         }
     }
 
-    println!("Result 1: {count1}"); // Result 1: 5092
-    println!("Result 2: {count2}"); // Result 2: 20484
+    println!("Result 1: {}", result1); // Result 1: 5092
+    println!("Result 2: {}", result2); // Result 2: 20484
 }

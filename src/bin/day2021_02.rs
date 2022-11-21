@@ -38,27 +38,26 @@ pub fn main() {
     ] = [0; 4];
 
     for d in directions {
+        use Direction::*;
+
         match d {
-            Direction::Forward(val) => {
+            Forward(val) => {
                 pos += val;
                 depth_new += val * aim;
             },
 
-            Direction::Down(val) => {
+            Down(val) => {
                 depth_old += val;
                 aim += val;
             },
 
-            Direction::Up(val) => {
+            Up(val) => {
                 depth_old -= val;
                 aim -= val;
             }
         }
     }
 
-    println!("Position: {pos}");                // Position: 2105
-    println!("Old depth: {depth_old}");         // Old depth: 807
-    println!("New depth: {depth_new}");         // New depth: 757618
     println!("Result 1: {}", pos * depth_old);  // Result 1: 1698735
     println!("Result 2: {}", pos * depth_new);  // Result 2: 1594785890
 }
