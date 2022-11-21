@@ -1,3 +1,7 @@
+// 2020
+pub mod day2020_01;
+
+// 2021
 pub mod day2021_01;
 pub mod day2021_02;
 pub mod day2021_03;

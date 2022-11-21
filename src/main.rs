@@ -23,7 +23,7 @@ fn main() {
                     if let Ok(day) = input.trim().parse() {
                         match year {
                             2020 => match day {
-                                // work in progress
+                                1 => day2020_01::main(),
                                 0 => break,
                                 _ => continue
                             },
