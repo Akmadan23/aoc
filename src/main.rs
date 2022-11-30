@@ -25,6 +25,7 @@ fn main() {
                             2020 => match day {
                                 1 => day2020_01::main(),
                                 2 => day2020_02::main(),
+                                3 => day2020_03::main(),
                                 0 => break,
                                 _ => continue
                             },
