@@ -17,3 +17,4 @@ pub mod day2021_07;
 pub mod day2022_01;
 pub mod day2022_02;
 pub mod day2022_03;
+pub mod day2022_04;
