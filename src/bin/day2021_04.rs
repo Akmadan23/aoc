@@ -1,11 +1,11 @@
 use std::{
     str::FromStr,
-    convert::Infallible
+    num::ParseIntError
 };
 
 const SIZE: usize = 5;
 
-#[derive(Clone, Default)]
+#[derive(Clone)]
 struct Board(Vec<Vec<(u16, bool)>>);
 
 impl Board {
@@ -43,7 +43,7 @@ impl Board {
 }
 
 impl FromStr for Board {
-    type Err = Infallible;
+    type Err = ParseIntError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         Ok(Self(s

@@ -22,8 +22,7 @@ impl FromStr for Passport {
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         let mut p = Passport::default();
         let data: Vec<Vec<String>> = s
-            .replace("\n", " ")
-            .split(" ")
+            .split([' ', '\n'])
             .map(|i| i
                 .split(":")
                 .map(|i| i.to_string())

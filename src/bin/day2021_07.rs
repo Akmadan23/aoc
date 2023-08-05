@@ -1,8 +1,8 @@
 pub fn main() {
-    let crabs: Vec<u32> = aoc::read_from_file("data/2021/07.txt", ",").unwrap();
+    let v: Vec<u32> = aoc::read_from_file("data/2021/07.txt", ",").unwrap();
     let [mut result1, mut result2] = [u32::MAX; 2];
 
-    let max = *crabs
+    let max = *v
         .iter()
         .max()
         .unwrap();
@@ -10,8 +10,8 @@ pub fn main() {
     for pos in 0..=max {
         let [mut current1, mut current2] = [0; 2];
 
-        for c in &crabs {
-            let n = c.abs_diff(pos);
+        for elem in &v {
+            let n = elem.abs_diff(pos);
             current1 += n;
             current2 += n * (n + 1) / 2;
         }
