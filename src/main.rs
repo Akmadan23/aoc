@@ -3,12 +3,12 @@ use bin::*;
 use aoc::{ flush, read };
 
 fn main() {
-    println!("Advent of Code: 2020..=2022");
+    println!("Advent of Code: 2020..=2023");
     println!("---------------------------");
 
     loop {
         let mut input = String::new();
-        print!("\nSelect a year between 2020 and 2022 (0 to exit): ");
+        print!("\nSelect a year between 2020 and 2023 (0 to exit): ");
         flush!();
         read!(input);
 
@@ -17,7 +17,7 @@ fn main() {
         };
 
         match year {
-            2020..=2022 => loop {
+            2020..=2023 => loop {
                 let mut input = String::new();
                 print!("\n[{}] Select a day between 1 and 25 (0 to change year): ", year);
                 flush!();
@@ -61,6 +61,12 @@ fn main() {
                         7 => day2022_07::main(),
                         8 => day2022_08::main(),
                         9..=25 => println!("Work in progress..."),
+                        0 => break,
+                        _ => continue
+                    },
+
+                    2023 => match day {
+                        1..=25 => println!("Work in progress..."),
                         0 => break,
                         _ => continue
                     },
