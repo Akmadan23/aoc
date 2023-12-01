@@ -22,3 +22,6 @@ pub mod day2022_05;
 pub mod day2022_06;
 pub mod day2022_07;
 pub mod day2022_08;
+
+// 2023
+pub mod day2023_01;
