@@ -75,7 +75,8 @@ fn main() {
                         7 => day2023_07::main(),
                         8 => day2023_08::main(),
                         9 => day2023_09::main(),
-                        10..=25 => println!("Work in progress..."),
+                        10 => day2023_10::main(),
+                        11..=25 => println!("Work in progress..."),
                         0 => break,
                         _ => continue
                     },
