@@ -35,3 +35,6 @@ pub mod day2023_08;
 pub mod day2023_09;
 pub mod day2023_10;
 pub mod day2023_11;
+
+// 2024
+pub mod day2024_01;
