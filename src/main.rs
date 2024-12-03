@@ -84,7 +84,8 @@ fn main() {
 
                     2024 => match day {
                         1 => day2024_01::main(),
-                        2..=25 => println!("Work in progress..."),
+                        2 => day2024_02::main(),
+                        3..=25 => println!("Work in progress..."),
                         0 => break,
                         _ => continue
                     },
