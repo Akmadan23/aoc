@@ -32,3 +32,23 @@ pub fn read_from_file<T: FromStr>(path: &str, sep: &str) -> Result<Vec<T>> {
                 .ok())?)
         .collect())
 }
+
+pub fn file_to_matrix<T: FromStr>(path: &str, sep_v: &str, sep_h: &str) -> Result<Vec<Vec<T>>> {
+    Ok(fs::read_to_string(path)?
+        .split(sep_v)
+        .filter_map(|line| line
+            .is_empty()
+            .not()
+            .then(|| line
+                .trim()
+                .split(sep_h)
+                .filter_map(|s| s
+                    .is_empty()
+                    .not()
+                    .then(|| s
+                        .trim()
+                        .parse()
+                        .ok())?)
+                .collect()))
+        .collect())
+}
