@@ -19,8 +19,8 @@ macro_rules! read {
     }
 }
 
-// Inspired by teej_dv's implementation
-pub fn read_from_file<T: FromStr>(path: &str, sep: &str) -> Result<Vec<T>> {
+/// Parse file into vector of `T`
+pub fn file_to_vec<T: FromStr>(path: &str, sep: &str) -> Result<Vec<T>> {
     Ok(fs::read_to_string(path)?
         .split(sep)
         .filter_map(|line| line
@@ -33,6 +33,7 @@ pub fn read_from_file<T: FromStr>(path: &str, sep: &str) -> Result<Vec<T>> {
         .collect())
 }
 
+/// Parse file into matrix (vector of vectors) of `T`
 pub fn file_to_matrix<T: FromStr>(path: &str, sep_v: &str, sep_h: &str) -> Result<Vec<Vec<T>>> {
     Ok(fs::read_to_string(path)?
         .split(sep_v)

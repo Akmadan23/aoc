@@ -1,7 +1,6 @@
 use std::{
-    ops::{ Deref, DerefMut },
     str::FromStr,
-    convert::Infallible
+    num::ParseIntError
 };
 
 #[derive(Debug)]
@@ -10,36 +9,19 @@ struct Tree {
     visible: bool
 }
 
-#[derive(Debug)]
-struct Row(Vec<Tree>);
-
-impl Deref for Row {
-    type Target = Vec<Tree>;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-
-impl DerefMut for Row {
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-
-impl FromStr for Row {
-    type Err = Infallible;
+impl FromStr for Tree {
+    type Err = ParseIntError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(Self(s
-            .split("")
-            .filter_map(|i| Some(Tree { height: i.parse().ok()?, visible: false }))
-            .collect()))
+        Ok(Self {
+            height: s.parse()?,
+            visible: false
+        })
     }
 }
 
 pub fn main() {
-    let mut rows: Vec<Row> = aoc::read_from_file("data/2022/08.txt", "\n").unwrap();
+    let mut rows: Vec<Vec<Tree>> = aoc::file_to_matrix("data/2022/08.txt", "\n", "").unwrap();
     let mut scores = Vec::new();
     let mut result1 = 0;
 

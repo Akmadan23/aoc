@@ -1,5 +1,5 @@
 pub fn main() {
-    let v: Vec<u32> = aoc::read_from_file("data/2021/07.txt", ",").unwrap();
+    let v: Vec<u32> = aoc::file_to_vec("data/2021/07.txt", ",").unwrap();
     let [mut result1, mut result2] = [u32::MAX; 2];
 
     let max = *v

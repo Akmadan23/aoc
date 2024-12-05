@@ -30,7 +30,7 @@ impl FromStr for RuckSack {
 }
 
 pub fn main() {
-    let rucksacks: Vec<RuckSack> = aoc::read_from_file("data/2022/03.txt", "\n").unwrap();
+    let rucksacks: Vec<RuckSack> = aoc::file_to_vec("data/2022/03.txt", "\n").unwrap();
     let [mut result1, mut result2] = [0; 2];
 
     'c: for c in rucksacks.chunks(3) {

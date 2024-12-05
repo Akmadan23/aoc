@@ -44,7 +44,7 @@ fn lcm(a: usize, b: usize) -> usize {
 }
 
 pub fn main() {
-    let lines: Vec<String> = aoc::read_from_file("data/2023/08.txt", "\n\n").unwrap();
+    let lines: Vec<String> = aoc::file_to_vec("data/2023/08.txt", "\n\n").unwrap();
 
     let directions: Vec<char> = lines[0]
         .chars()

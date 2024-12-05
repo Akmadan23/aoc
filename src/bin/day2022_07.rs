@@ -32,7 +32,7 @@ impl FromStr for Command {
 }
 
 pub fn main() {
-    let commands: Vec<Command> = aoc::read_from_file("data/2022/07.txt", "$ ").unwrap();
+    let commands: Vec<Command> = aoc::file_to_vec("data/2022/07.txt", "$ ").unwrap();
     let mut sizes = HashMap::new();
     let mut path = Vec::new();
 

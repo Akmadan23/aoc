@@ -10,7 +10,7 @@ fn eval(time: usize, duration: usize) -> u32 {
 }
 
 pub fn main() {
-    let lines: Vec<String> = aoc::read_from_file("data/2023/06.txt", "\n").unwrap();
+    let lines: Vec<String> = aoc::file_to_vec("data/2023/06.txt", "\n").unwrap();
 
     let times_and_durations_pt1 = |index: usize| lines[index]
         .split(' ')

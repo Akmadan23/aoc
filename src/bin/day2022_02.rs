@@ -1,5 +1,5 @@
 pub fn main() {
-    let games: Vec<String> = aoc::read_from_file("data/2022/02.txt", "\n").unwrap();
+    let games: Vec<String> = aoc::file_to_vec("data/2022/02.txt", "\n").unwrap();
     let [mut result1, mut result2] = [0; 2];
 
     for g in games {

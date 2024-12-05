@@ -41,7 +41,7 @@ fn evaluate_digits(char: char, substr: &str, digit_v1: &mut u32, digit_v2: &mut 
 }
 
 pub fn main() {
-    let lines: Vec<String> = aoc::read_from_file("data/2023/01.txt", "\n").unwrap();
+    let lines: Vec<String> = aoc::file_to_vec("data/2023/01.txt", "\n").unwrap();
     let [mut result1, mut result2] = [0; 2];
 
     for line in &lines {

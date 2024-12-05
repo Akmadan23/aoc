@@ -28,7 +28,7 @@ impl FromStr for Direction {
 }
 
 pub fn main() {
-    let directions: Vec<Direction> = aoc::read_from_file("data/2021/02.txt", "\n").unwrap();
+    let directions: Vec<Direction> = aoc::file_to_vec("data/2021/02.txt", "\n").unwrap();
 
     let [
         mut pos,

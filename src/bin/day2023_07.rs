@@ -147,7 +147,7 @@ macro_rules! sort_method {
 }
 
 pub fn main() {
-    let mut hands: Vec<Hand> = aoc::read_from_file("data/2023/07.txt", "\n").unwrap();
+    let mut hands: Vec<Hand> = aoc::file_to_vec("data/2023/07.txt", "\n").unwrap();
     
     let get_result = |vec: &Vec<Hand>| vec
         .iter()

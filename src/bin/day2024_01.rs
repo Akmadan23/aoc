@@ -1,15 +1,15 @@
 pub fn main() {
-    let lines: Vec<String> = aoc::read_from_file("data/2024/01.txt", "\n").unwrap();
-    let [mut list1, mut list2]: [Vec<u32>; 2] = [vec![], vec![]];
+    let lines: Vec<String> = aoc::file_to_vec("data/2024/01.txt", "\n").unwrap();
     let (mut result1, mut result2) = (0, 0);
 
-    lines
+    let (mut list1, mut list2): (Vec<u32>, Vec<u32>) = lines
         .iter()
         .filter_map(|l| l.split_once("   "))
-        .for_each(|(x, y)| {
-            list1.push(x.parse().unwrap());
-            list2.push(y.parse().unwrap());
-        });
+        .filter_map(|t| Some((
+            t.0.parse::<u32>().ok()?,
+            t.1.parse::<u32>().ok()?
+        )))
+        .unzip();
 
     list1.sort();
     list2.sort();

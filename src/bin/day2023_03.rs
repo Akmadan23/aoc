@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 pub fn main() {
-    let mut lines: Vec<String> = aoc::read_from_file("data/2023/03.txt", "\n").unwrap();
+    let mut lines: Vec<String> = aoc::file_to_vec("data/2023/03.txt", "\n").unwrap();
     let mut result1 = 0;
     let mut gears = HashMap::<(usize, usize), Vec<usize>>::new();
 

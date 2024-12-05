@@ -1,5 +1,5 @@
 pub fn main() {
-    let lines: Vec<String> = aoc::read_from_file("data/2020/03.txt", "\n").unwrap();
+    let lines: Vec<String> = aoc::file_to_vec("data/2020/03.txt", "\n").unwrap();
     let steps = [3, 1, 5, 7, 1];
     let [mut indexes, mut results] = [[0; 5]; 2];
 

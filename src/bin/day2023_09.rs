@@ -1,31 +1,5 @@
-use std::{
-    str::FromStr,
-    ops::Deref,
-};
-
-struct Sequence(Vec<isize>);
-
-impl Deref for Sequence {
-    type Target = Vec<isize>;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-
-impl FromStr for Sequence {
-    type Err = ();
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(Self(s
-            .split(' ')
-            .filter_map(|c| c.parse().ok())
-            .collect()))
-    }
-}
-
 pub fn main() {
-    let sequences: Vec<Sequence> = aoc::read_from_file("data/2023/09.txt", "\n").unwrap();
+    let sequences: Vec<Vec<isize>> = aoc::file_to_matrix("data/2023/09.txt", "\n", " ").unwrap();
     let [mut result1, mut result2]: [isize; 2] = [0; 2];
 
     let get_diffs = |x: &Vec<isize>| x
@@ -70,5 +44,5 @@ pub fn main() {
     }
 
     println!("Result 1: {}", result1); // Result 1: 1647269739
-    println!("Result 2: {}", result2); // Result 2: 84900879
+    println!("Result 2: {}", result2); // Result 2: 864
 }

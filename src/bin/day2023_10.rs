@@ -1,8 +1,3 @@
-use std::{
-    str::FromStr,
-    ops::{ Deref, DerefMut },
-};
-
 enum Direction {
     North,
     South,
@@ -10,31 +5,7 @@ enum Direction {
     East,
 }
 
-struct CharVec(Vec<char>);
-
-impl Deref for CharVec {
-    type Target = Vec<char>;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-
-impl DerefMut for CharVec {
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-
-impl FromStr for CharVec {
-    type Err = ();
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(Self(s.chars().collect()))
-    }
-}
-
-fn scan(lines: &mut Vec<CharVec>, from: Direction, i: usize, j: usize, count: usize) -> usize {
+fn scan(lines: &mut Vec<Vec<char>>, from: Direction, i: usize, j: usize, count: usize) -> usize {
     let cur_char = lines[i][j];
 
     if cur_char == 'S' {
@@ -135,7 +106,7 @@ fn scan(lines: &mut Vec<CharVec>, from: Direction, i: usize, j: usize, count: us
 }
 
 pub fn main() {
-    let mut lines: Vec<CharVec> = aoc::read_from_file("data/2023/10.txt", "\n").unwrap();
+    let mut lines: Vec<Vec<char>> = aoc::file_to_matrix("data/2023/10.txt", "\n", "").unwrap();
     let mut start = (0, 0);
 
     for (i, line) in lines.iter().enumerate() {

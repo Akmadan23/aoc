@@ -52,7 +52,7 @@ impl FromStr for Game {
 }
 
 pub fn main() {
-    let games: Vec<Game> = aoc::read_from_file("data/2023/02.txt", "\n").unwrap();
+    let games: Vec<Game> = aoc::file_to_vec("data/2023/02.txt", "\n").unwrap();
     let [mut result1, mut result2] = [0; 2];
 
     for game in &games {

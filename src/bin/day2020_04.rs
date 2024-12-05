@@ -56,7 +56,7 @@ impl FromStr for Passport {
 }
 
 pub fn main() {
-    let passports: Vec<Passport> = aoc::read_from_file("data/2020/04.txt", "\n\n").unwrap();
+    let passports: Vec<Passport> = aoc::file_to_vec("data/2020/04.txt", "\n\n").unwrap();
     let colors = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"];
     let [mut result1, mut result2] = [0; 2];
 

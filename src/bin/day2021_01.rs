@@ -1,5 +1,5 @@
 pub fn main() {
-    let depths: Vec<i32> = aoc::read_from_file("data/2021/01.txt", "\n").unwrap();
+    let depths: Vec<i32> = aoc::file_to_vec("data/2021/01.txt", "\n").unwrap();
     let [mut result1, mut result2] = [0; 2];
 
     for i in 1..depths.len() {

@@ -58,8 +58,8 @@ impl FromStr for Board {
 }
 
 pub fn main() {
-    let numbers: Vec<u16> = aoc::read_from_file("data/2021/04.txt", ",").unwrap();
-    let mut boards: Vec<Board> = aoc::read_from_file("data/2021/04.txt", "\n\n").unwrap()[1..].to_vec();
+    let numbers: Vec<u16> = aoc::file_to_vec("data/2021/04.txt", ",").unwrap();
+    let mut boards: Vec<Board> = aoc::file_to_vec("data/2021/04.txt", "\n\n").unwrap()[1..].to_vec();
     let [mut result1, mut result2] = [0; 2]; // first and last
     let mut first = false;
 

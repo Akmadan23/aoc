@@ -41,7 +41,7 @@ impl FromStr for Card {
 }
 
 pub fn main() {
-    let mut cards: Vec<Card> = aoc::read_from_file("data/2023/04.txt", "\n").unwrap();
+    let mut cards: Vec<Card> = aoc::file_to_vec("data/2023/04.txt", "\n").unwrap();
 
     let result1: u32 = cards
         .iter()

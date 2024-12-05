@@ -1,6 +1,5 @@
 use std::str::FromStr;
 
-#[derive(Debug)]
 struct Map {
     dest_start: usize,
     source_start: usize,
@@ -25,7 +24,7 @@ impl FromStr for Map {
 }
 
 pub fn main() {
-    let groups: Vec<String> = aoc::read_from_file("data/2023/05.txt", "\n\n").unwrap();
+    let groups: Vec<String> = aoc::file_to_vec("data/2023/05.txt", "\n\n").unwrap();
 
     let mut seeds1: Vec<usize> = groups[0]
         .split(' ')

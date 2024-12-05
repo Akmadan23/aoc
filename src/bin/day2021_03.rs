@@ -1,41 +1,13 @@
-use std::{
-    ops::Deref,
-    str::FromStr,
-    convert::Infallible,
-};
-    
 const SIZE: usize = 12;
-
-#[derive(Clone)]
-struct Line(Vec<u16>);
 
 #[derive(Default)]
 struct Data {
     int: i32,
     str: String,
-    lines: Vec<Line>
+    lines: Vec<Vec<u16>>
 }
 
-impl Deref for Line {
-    type Target = Vec<u16>;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-
-impl FromStr for Line {
-    type Err = Infallible;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(Self(s
-            .split("")
-            .filter_map(|i| i.parse().ok())
-            .collect()))
-    }
-}
-
-fn get_str(mut lines: Vec<Line>, val1: u16, val2: u16) -> String {
+fn get_str(mut lines: Vec<Vec<u16>>, val1: u16, val2: u16) -> String {
     for i in 0..SIZE {
         let mut cont = 0;
         let len = lines.len() as u16;
@@ -65,7 +37,7 @@ fn get_str(mut lines: Vec<Line>, val1: u16, val2: u16) -> String {
 }
 
 pub fn main() {
-    let lines: Vec<Line> = aoc::read_from_file("data/2021/03.txt", "\n").unwrap();
+    let lines: Vec<Vec<u16>> = aoc::file_to_matrix("data/2021/03.txt", "\n", "").unwrap();
 
     let [
         mut gamma,

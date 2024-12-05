@@ -1,7 +1,7 @@
 use std::collections::HashSet;
 
 pub fn main() {
-    let stream: Vec<String> = aoc::read_from_file("data/2022/06.txt", "").unwrap();
+    let stream: Vec<String> = aoc::file_to_vec("data/2022/06.txt", "").unwrap();
 
     let result = |len| {
         for (index, window) in stream.windows(len).enumerate() {

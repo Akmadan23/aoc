@@ -34,7 +34,7 @@ impl FromStr for Line {
 }
 
 pub fn main() {
-    let lines: Vec<Line> = aoc::read_from_file("data/2021/05.txt", "\n").unwrap();
+    let lines: Vec<Line> = aoc::file_to_vec("data/2021/05.txt", "\n").unwrap();
     let mut diagram = [[[0 as u8; 2]; 990]; 990];
     let [mut result1, mut result2] = [0 as u16; 2];
 

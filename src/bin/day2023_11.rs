@@ -1,5 +1,5 @@
 pub fn main() {
-    let mut lines: Vec<String> = aoc::read_from_file("data/2023/11.txt", "\n").unwrap();
+    let mut lines: Vec<String> = aoc::file_to_vec("data/2023/11.txt", "\n").unwrap();
     let mut galaxies1 = vec![];
     let mut columns_to_expand = vec![];
     let mut lines_to_expand = vec![];

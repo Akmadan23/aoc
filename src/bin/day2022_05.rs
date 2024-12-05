@@ -74,8 +74,8 @@ impl FromStr for Move {
 }
 
 pub fn main() {
-    let moves: Vec<Move> = aoc::read_from_file("data/2022/05.txt", "\n").unwrap();
-    let stacks: Vec<Stack> = aoc::read_from_file("data/2022/05.txt", "\n\n").unwrap();
+    let moves: Vec<Move> = aoc::file_to_vec("data/2022/05.txt", "\n").unwrap();
+    let stacks: Vec<Stack> = aoc::file_to_vec("data/2022/05.txt", "\n\n").unwrap();
 
     let mut stacks1 = stacks[0].clone();
     let mut stacks2 = stacks[0].clone();

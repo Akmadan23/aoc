@@ -29,7 +29,7 @@ impl FromStr for Pair {
 }
 
 pub fn main() {
-    let pairs: Vec<Pair> = aoc::read_from_file("data/2022/04.txt", "\n").unwrap();
+    let pairs: Vec<Pair> = aoc::file_to_vec("data/2022/04.txt", "\n").unwrap();
     let [mut result1, mut result2] = [0; 2];
 
     for p in pairs {
