@@ -43,3 +43,4 @@ pub mod day2024_03;
 pub mod day2024_04;
 pub mod day2024_05;
 pub mod day2024_06;
+pub mod day2024_07;
